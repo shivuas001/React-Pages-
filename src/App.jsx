@@ -1,13 +1,16 @@
-import {Router, RouterProvider, createBrowserRouter, createRoutesFromElements} from 'react-router-dom'
+import {Route, RouterProvider, createBrowserRouter, createRoutesFromElements} from 'react-router-dom';
+import HomePage from './pages/HomePage';
 
 
-const Router = createBrowserRouter(createRoutesFromElements())
+const router = createBrowserRouter(createRoutesFromElements(
+  <Route path='/'>
+    <Route index element= {<HomePage />} />
+  </Route>
+))
 
 const App = ()=>{
   return(
-    <>
-    <h1>hello world</h1>
-    </>
+    <RouterProvider router={router} />
   )
 }
 
